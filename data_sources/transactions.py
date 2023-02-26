@@ -1,5 +1,5 @@
 '''
-from tecton import BatchSource, FileConfig, SnowflakeConfig
+from tecton import BatchSource, FileConfig
 
 transactions = BatchSource(
     name="transactions",
