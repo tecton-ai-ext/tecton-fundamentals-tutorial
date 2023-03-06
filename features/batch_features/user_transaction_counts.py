@@ -4,7 +4,6 @@ from entities import user
 from data_sources.transactions import transactions
 from datetime import datetime, timedelta
 
-
 @batch_feature_view(
     sources=[FilteredSource(transactions)],
     entities=[user],
