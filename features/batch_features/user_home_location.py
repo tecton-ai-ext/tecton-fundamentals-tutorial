@@ -12,8 +12,6 @@ from datetime import datetime, timedelta
     feature_start_time=datetime(2017,1, 1),
     batch_schedule=timedelta(days=1),
     ttl=timedelta(days=3650),
-    tags={'release': 'production'},
-    owner='matt@tecton.ai',
     description='User date of birth, entered at signup.',
     timestamp_field='signup_timestamp'
 )
