@@ -7,16 +7,14 @@ from datetime import datetime, timedelta
 @batch_feature_view(
     sources=[FilteredSource(customers)],
     entities=[user],
-    mode='spark_sql',
+    mode="spark_sql",
     online=True,
     offline=True,
     feature_start_time=datetime(2016, 1, 1),
     batch_schedule=timedelta(days=1),
     ttl=timedelta(days=3650),
-    timestamp_field='signup_timestamp',
-    tags={'release': 'production'},
-    owner='matt@tecton.ai',
-    description='User credit card issuer derived from the user credit card number.',
+    timestamp_field="signup_timestamp",
+    description="User credit card issuer derived from the user credit card number.",
 )
 def user_credit_card_issuer(customers):
     return f"""

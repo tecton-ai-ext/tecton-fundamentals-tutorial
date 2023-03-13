@@ -10,21 +10,13 @@ from datetime import datetime, timedelta
     mode="spark_sql",
     aggregation_interval=timedelta(days=1),
     aggregations=[
-        Aggregation(
-            column="transaction_id", function="count", time_window=timedelta(days=1)
-        ),
-        Aggregation(
-            column="transaction_id", function="count", time_window=timedelta(days=30)
-        ),
-        Aggregation(
-            column="transaction_id", function="count", time_window=timedelta(days=90)
-        ),
+        Aggregation(column="transaction_id", function="count", time_window=timedelta(days=1)),
+        Aggregation(column="transaction_id", function="count", time_window=timedelta(days=30)),
+        Aggregation(column="transaction_id", function="count", time_window=timedelta(days=90)),
     ],
     online=True,
     offline=True,
     feature_start_time=datetime(2021, 1, 1),
-    tags={"release": "production"},
-    owner="matt@tecton.ai",
     description="User transaction totals over a series of time windows, updated daily.",
     name="user_transaction_counts",
 )
